@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/home_page.dart';
+import 'package:medical_app/main.dart';
 import 'package:medical_app/pages/massages.dart';
 import 'package:medical_app/pages/schedule.dart';
 import 'package:medical_app/pages/setting.dart';
@@ -18,7 +18,7 @@ class BottomNavBar extends StatelessWidget {
           TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => HomePage(),
+                  builder: (context) => MyApp(),
                 ));
               },
               child: buildNavButton(

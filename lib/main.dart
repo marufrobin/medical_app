@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.teal,
+          backgroundColor: Color(0xffECEBF4),
           body: Container(
             height: double.infinity,
             width: double.infinity,

@@ -120,9 +120,9 @@ class ListBuilder extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8)),
                             child: Center(
                               child: Text(
-                                "Cancel",
+                                "Reschdule",
                                 style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
+                                    fontSize: 16, color: Colors.white),
                               ),
                             ),
                           ),

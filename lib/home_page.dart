@@ -22,18 +22,24 @@ class HomePage extends StatelessWidget {
                   color: Colors.black,
                   fontWeight: FontWeight.w600),
             ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 8),
               padding: EdgeInsets.all(4),
               width: double.infinity,
               height: 60,
               decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(8)),
+                  color: Colors.grey.shade400.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(16)),
               child: Row(
                 children: [
                   TextButton(
                       style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16))),
                           backgroundColor:
                               MaterialStateProperty.all(Color(0xff6B5DD5)),
                           padding:
@@ -48,38 +54,49 @@ class HomePage extends StatelessWidget {
                   Spacer(),
                   TextButton(
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xff6B5DD5)),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16))),
+                          backgroundColor: MaterialStateProperty.all(
+                            Colors.grey.shade400.withOpacity(0.5),
+                          ),
                           padding:
                               MaterialStateProperty.all(EdgeInsets.all(16))),
                       onPressed: () {},
                       child: Container(
                         child: Text(
                           "Completed",
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                       )),
                   Spacer(),
                   TextButton(
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xff6B5DD5)),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16))),
+                          backgroundColor: MaterialStateProperty.all(
+                            Colors.grey.shade400.withOpacity(0.5),
+                          ),
                           padding:
                               MaterialStateProperty.all(EdgeInsets.all(16))),
                       onPressed: () {},
                       child: Container(
                         child: Text(
                           "Canceled",
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                       ))
                 ],
               ),
             ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
             Text(
               "Nearest visit",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 color: Colors.black,
                 fontWeight: FontWeight.w400,
               ),
@@ -189,9 +206,9 @@ class HomePage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(8)),
                               child: Center(
                                 child: Text(
-                                  "Cancel",
+                                  "Reschdule",
                                   style: TextStyle(
-                                      fontSize: 16, color: Colors.black),
+                                      fontSize: 16, color: Colors.white),
                                 ),
                               ),
                             ),
@@ -203,10 +220,13 @@ class HomePage extends StatelessWidget {
                 )
               ]),
             ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
             Text(
               "Future visit",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 20,
                 color: Colors.black,
                 fontWeight: FontWeight.w400,
               ),
