@@ -13,15 +13,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          child: HomePage(),
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.teal,
+          body: Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: HomePage(),
+          ),
+          // bottomSheet: BottomNavBar(),
+          bottomNavigationBar: BottomNavBar(),
         ),
-        // bottomSheet: BottomNavBar(),
-        bottomNavigationBar: BottomNavBar(),
       ),
     );
   }
