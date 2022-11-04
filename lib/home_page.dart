@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         // height: MediaQuery.of(context).size.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,73 +23,9 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
+              height: MediaQuery.of(context).size.height * 0.03,
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 8),
-              padding: EdgeInsets.all(4),
-              width: double.infinity,
-              height: 60,
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade400.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(16)),
-              child: Row(
-                children: [
-                  TextButton(
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16))),
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xff6B5DD5)),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(16))),
-                      onPressed: () {},
-                      child: Container(
-                        child: Text(
-                          "Upcoming",
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      )),
-                  Spacer(),
-                  TextButton(
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16))),
-                          backgroundColor: MaterialStateProperty.all(
-                            Colors.grey.shade400.withOpacity(0.5),
-                          ),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(16))),
-                      onPressed: () {},
-                      child: Container(
-                        child: Text(
-                          "Completed",
-                          style: TextStyle(fontSize: 16, color: Colors.black),
-                        ),
-                      )),
-                  Spacer(),
-                  TextButton(
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16))),
-                          backgroundColor: MaterialStateProperty.all(
-                            Colors.grey.shade400.withOpacity(0.5),
-                          ),
-                          padding:
-                              MaterialStateProperty.all(EdgeInsets.all(16))),
-                      onPressed: () {},
-                      child: Container(
-                        child: Text(
-                          "Canceled",
-                          style: TextStyle(fontSize: 16, color: Colors.black),
-                        ),
-                      ))
-                ],
-              ),
-            ),
+            tabView(),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
             ),
@@ -103,7 +39,7 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(16),
-              margin: EdgeInsets.all(16),
+              margin: EdgeInsets.symmetric(vertical: 16),
               width: double.infinity,
               height: 190,
               decoration: BoxDecoration(
@@ -121,33 +57,30 @@ class HomePage extends StatelessWidget {
                               "${ListUserData[0].doctorName}",
                               style: TextStyle(
                                 fontSize: 20,
-                                fontWeight: FontWeight.w500,
+                                // fontWeight: FontWeight.w500,
                               ),
                             ),
                             Text(
                               "${ListUserData[0].doctorType}",
                               style: TextStyle(
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w500,
+                                  // fontWeight: FontWeight.w500,
                                   color: Colors.black45),
                             )
                           ],
                         )),
-                    Expanded(
-                      flex: 1,
-                      child: CircleAvatar(
-                        backgroundColor: Color(0xffFFCCCD),
-                        child: Image.asset("${ListUserData[0].doctorImage}",
-                            scale: 10),
-                        radius: 40,
-                      ),
+                    CircleAvatar(
+                      backgroundColor: Color(0xffFFCCCD),
+                      child: Image.asset("${ListUserData[0].doctorImage}",
+                          scale: 12),
+                      radius: 30,
                     )
                   ],
                 )),
                 Divider(
-                  thickness: 4,
-                  endIndent: 8,
-                  color: Colors.black54,
+                  thickness: 1,
+                  // endIndent: 4,
+                  color: Colors.grey,
                 ),
                 Expanded(
                   // flex: 2,
@@ -158,11 +91,14 @@ class HomePage extends StatelessWidget {
                         children: [
                           buildCalenderTime(Icons.calendar_month_rounded,
                               ListUserData[0].appointDate),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.02,
+                          ),
                           buildCalenderTime(Icons.access_time_filled_outlined,
                               ListUserData[0].appointTime),
                           // Spacer(),
                           SizedBox(
-                            width: 8,
+                            width: MediaQuery.of(context).size.width * 0.02,
                           ),
                           CircleAvatar(
                             radius: 6,
@@ -175,16 +111,17 @@ class HomePage extends StatelessWidget {
                           )
                         ],
                       ),
-                      Spacer(),
+                      // Spacer(),
                       Row(
                         children: [
                           GestureDetector(
                             onTap: () {},
                             child: Container(
-                              height: 40,
-                              width: 140,
+                              margin: EdgeInsets.only(top: 4),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 14, horizontal: 50),
                               decoration: BoxDecoration(
-                                  color: Colors.grey,
+                                  color: Colors.grey.shade200,
                                   borderRadius: BorderRadius.circular(8)),
                               child: Center(
                                 child: Text(
@@ -199,8 +136,9 @@ class HomePage extends StatelessWidget {
                           GestureDetector(
                             onTap: () {},
                             child: Container(
-                              height: 40,
-                              width: 140,
+                              margin: EdgeInsets.only(top: 4),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 14, horizontal: 40),
                               decoration: BoxDecoration(
                                   color: Color(0xff6B5DD5),
                                   borderRadius: BorderRadius.circular(8)),
@@ -238,6 +176,73 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Container tabView() {
+    return Container(
+      width: double.infinity,
+      height: 64,
+      decoration: BoxDecoration(
+          color: Color(0xffF4F5F9), borderRadius: BorderRadius.circular(10)),
+      child: Row(
+        children: [
+          TextButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
+                  backgroundColor: MaterialStateProperty.all(Color(0xff6B5DD5)),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(16))),
+              onPressed: () {},
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 4),
+                child: Text(
+                  "Upcoming",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+              )),
+          Container(
+            margin: EdgeInsets.all(4),
+            height: 40,
+            width: 2,
+            color: Color(0xffA6ABB7),
+          ),
+          TextButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(8))),
+              onPressed: () {},
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Completed",
+                  style: TextStyle(fontSize: 16, color: Color(0xffA6ABB7)),
+                ),
+              )),
+          Container(
+            // padding: EdgeInsets.all(),
+            margin: EdgeInsets.all(4),
+
+            height: 40,
+            width: 2,
+            color: Color(0xffA6ABB7),
+          ),
+          TextButton(
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(8))),
+              onPressed: () {},
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "Canceled",
+                  style: TextStyle(fontSize: 16, color: Color(0xffA6ABB7)),
+                ),
+              ))
+        ],
+      ),
+    );
+  }
+
   Row buildCalenderTime(IconData iconName, String str) {
     return Row(
       children: [
@@ -248,8 +253,7 @@ class HomePage extends StatelessWidget {
         ),
         Text(
           "${str}",
-          style: TextStyle(
-              fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
+          style: TextStyle(fontSize: 14, color: Colors.black),
         )
       ],
     );

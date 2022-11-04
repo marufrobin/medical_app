@@ -9,15 +9,16 @@ class ListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xffFEEE6),
       height: (220 * ListUserData.length).toDouble(),
       child: ListView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: 10,
+        itemCount: ListUserData.length,
         itemBuilder: (context, index) {
           return Container(
             padding: EdgeInsets.all(16),
-            margin: EdgeInsets.all(16),
+            margin: EdgeInsets.symmetric(vertical: 16),
             width: double.infinity,
             height: 190,
             decoration: BoxDecoration(
@@ -35,102 +36,109 @@ class ListBuilder extends StatelessWidget {
                             "${ListUserData[index].doctorName}",
                             style: TextStyle(
                               fontSize: 20,
-                              fontWeight: FontWeight.w500,
+                              // fontWeight: FontWeight.w500,
                             ),
                           ),
                           Text(
                             "${ListUserData[index].doctorType}",
                             style: TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.w500,
+                                // fontWeight: FontWeight.w500,
                                 color: Colors.black45),
                           )
                         ],
                       )),
-                  Expanded(
-                    flex: 1,
-                    child: CircleAvatar(
-                      backgroundColor: Color(0xffFFCCCD),
-                      child: Image.asset("${ListUserData[index].doctorImage}",
-                          scale: 10),
-                      radius: 40,
-                    ),
+                  CircleAvatar(
+                    backgroundColor: Color(0xffFFCCCD),
+                    child: Image.asset("${ListUserData[index].doctorImage}",
+                        scale: 12),
+                    radius: 30,
                   )
                 ],
               )),
               Divider(
-                thickness: 4,
-                endIndent: 8,
-                color: Colors.black54,
+                thickness: 1,
+                // endIndent: 4,
+                color: Colors.grey,
               ),
-              Expanded(
-                // flex: 2,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        buildCalenderTime(Icons.calendar_month_rounded,
-                            ListUserData[index].appointDate),
-                        buildCalenderTime(Icons.access_time_filled_outlined,
-                            ListUserData[index].appointTime),
-                        // Spacer(),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        CircleAvatar(
-                          radius: 6,
-                          backgroundColor: Colors.green,
-                        ),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      buildCalenderTime(Icons.calendar_month_rounded,
+                          ListUserData[index].appointDate),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.02,
+                      ),
+                      buildCalenderTime(Icons.access_time_filled_outlined,
+                          ListUserData[index].appointTime),
+                      // Spacer(),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.02,
+                      ),
+                      CircleAvatar(
+                        radius: 6,
+                        backgroundColor: Colors.green,
+                      ),
 
-                        Text(
-                          "Confirmed",
-                          style: TextStyle(fontSize: 14),
-                        )
-                      ],
-                    ),
-                    Spacer(),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 40,
-                            width: 140,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(8)),
-                            child: Center(
-                              child: Text(
-                                "Cancel",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
-                              ),
+                      Text(
+                        "Confirmed",
+                        style: TextStyle(fontSize: 14),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          // margin: EdgeInsets.only(top: 2),
+
+                          padding: EdgeInsets.symmetric(
+                              vertical: 14, horizontal: 50),
+                          // height: 40,
+                          // width: 140,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Center(
+                            child: Text(
+                              "Cancel",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black),
                             ),
                           ),
                         ),
-                        Spacer(),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 40,
-                            width: 140,
-                            decoration: BoxDecoration(
-                                color: Color(0xff6B5DD5),
-                                borderRadius: BorderRadius.circular(8)),
-                            child: Center(
-                              child: Text(
-                                "Reschdule",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white),
-                              ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          // margin: EdgeInsets.only(top: 16),
+
+                          padding: EdgeInsets.symmetric(
+                              vertical: 14, horizontal: 40),
+                          // height: 40,
+                          // width: 140,
+                          decoration: BoxDecoration(
+                              color: Color(0xff6B5DD5),
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Center(
+                            child: Text(
+                              "Reschdule",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),
-                      ],
-                    )
-                  ],
-                ),
+                      ),
+                    ],
+                  )
+                ],
               )
             ]),
           );
@@ -149,8 +157,7 @@ class ListBuilder extends StatelessWidget {
         ),
         Text(
           "${str}",
-          style: TextStyle(
-              fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
+          style: TextStyle(fontSize: 14, color: Colors.black),
         )
       ],
     );
