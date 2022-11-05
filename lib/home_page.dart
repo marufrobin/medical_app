@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Image.asset("images/home"),
             Text(
               "Schedule",
               style: TextStyle(

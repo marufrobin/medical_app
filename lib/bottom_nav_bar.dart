@@ -22,7 +22,7 @@ class BottomNavBar extends StatelessWidget {
                 ));
               },
               child: buildNavButton(
-                  iconName: Icons.home_filled, buttonName: "Home")),
+                  imageLocation: "images/homeIcon.png", buttonName: "Home")),
           TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
@@ -30,7 +30,8 @@ class BottomNavBar extends StatelessWidget {
                 ));
               },
               child: buildNavButton(
-                  iconName: Icons.textsms, buttonName: "Massages")),
+                  imageLocation: "images/massageIcon.png",
+                  buttonName: "Massages")),
           TextButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
@@ -38,7 +39,8 @@ class BottomNavBar extends StatelessWidget {
               ));
             },
             child: buildNavButton(
-                iconName: Icons.calendar_month_rounded, buttonName: "Schedule"),
+                imageLocation: "images/calenderIcon.png",
+                buttonName: "Schedule"),
           ),
           TextButton(
               onPressed: () {
@@ -47,20 +49,20 @@ class BottomNavBar extends StatelessWidget {
                 ));
               },
               child: buildNavButton(
-                  iconName: Icons.settings, buttonName: "Settings")),
+                  imageLocation: "images/settingIcon.png",
+                  buttonName: "Settings")),
         ],
       ),
     );
   }
 
   Widget buildNavButton(
-      {required IconData iconName, required String buttonName}) {
+      {required String imageLocation, required String buttonName}) {
     return Column(
       children: [
-        Icon(
-          iconName,
-          color: Color(0xff695CD5),
-          size: 40,
+        Image.asset(
+          "${imageLocation}",
+          scale: 2.4,
         ),
         Text(
           "$buttonName",
