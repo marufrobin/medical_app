@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/home_page.dart';
-
-import 'bottom_nav_bar.dart';
+import 'package:medical_app/pages/schedule.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,19 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          backgroundColor: Color(0xffF4F5F9),
-          body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: HomePage(),
-          ),
-          // bottomSheet: BottomNavBar(),
-          bottomNavigationBar: BottomNavBar(),
-        ),
-      ),
-    );
+    return MaterialApp(home: SchedulePage());
   }
 }
