@@ -10,7 +10,7 @@ class SchedulePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return (SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
@@ -183,7 +183,7 @@ class SchedulePage extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavBar(),
       ),
-    );
+    ));
   }
 
   Container tabView() {

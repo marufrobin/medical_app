@@ -44,11 +44,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   clr: Color(0xffDAD9E3))),
           TextButton(
             onPressed: () {
-              isSchdule = true;
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => SchedulePage(),
-              ));
-              setState(() {});
+              setState(() {
+                isSchdule = true;
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => SchedulePage(),
+                ));
+              });
             },
             child: buildNavButton(
                 imageLocation: isSchdule == false
