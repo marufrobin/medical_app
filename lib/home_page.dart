@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               style: TextStyle(
                   fontSize: 30,
                   color: Colors.black,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w400),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -182,7 +182,8 @@ class HomePage extends StatelessWidget {
       width: double.infinity,
       height: 64,
       decoration: BoxDecoration(
-          color: Color(0xffF4F5F9), borderRadius: BorderRadius.circular(10)),
+          color: Colors.grey.shade300.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(10)),
       child: Row(
         children: [
           TextButton(
