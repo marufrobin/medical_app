@@ -48,6 +48,15 @@ class ListViewOfAfterBox extends StatelessWidget {
               color: Colors.black, fontSize: 22, fontWeight: FontWeight.w500),
         ),
       ),
+      Container(
+        width: double.infinity,
+        margin: EdgeInsets.symmetric(horizontal: 16),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return Container();
+          },
+        ),
+      ),
     ]);
   }
 }
