@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/home_page.dart';
-import 'package:medical_app/pages/doctorInfo.dart';
 import 'package:medical_app/pages/massages.dart';
 import 'package:medical_app/pages/schedule.dart';
 import 'package:medical_app/pages/setting.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: SafeArea(
       child: Scaffold(
-        body: DoctorInfoPage(),
+        body: HomePage(),
         // bottomNavigationBar: BottomNavBar(),
       ),
     ));
