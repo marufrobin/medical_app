@@ -14,49 +14,51 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffF5F5F5),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-                padding: EdgeInsets.all(16),
-                child: Column(children: [
-                  buildCustomAppBar(context),
-                  Row(children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 16, top: 16),
-                      padding: EdgeInsets.all(16),
-                      height: MediaQuery.of(context).size.height * 0.2,
-                      width: MediaQuery.of(context).size.width * 0.42,
-                      decoration: BoxDecoration(
-                          color: Color(0xff6B5DD5),
-                          borderRadius: BorderRadius.circular(16)),
-                      child: buildBoxAfterAppBar(
-                          "images/addIcon.png",
-                          "Clinic Visit",
-                          "Make an appointment",
-                          Colors.white,
-                          Colors.white60),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 16),
-                      padding: EdgeInsets.all(16),
-                      height: MediaQuery.of(context).size.height * 0.2,
-                      width: MediaQuery.of(context).size.width * 0.42,
-                      decoration: BoxDecoration(
-                          color: Color(0xffFEFEFE),
-                          borderRadius: BorderRadius.circular(16)),
-                      child: buildBoxAfterAppBar(
-                          "images/homeIcon.png",
-                          "Home Visit",
-                          "Call the doctor home",
-                          Colors.black,
-                          Colors.black38),
-                    ),
-                  ])
-                ])),
-            ListViewOfAfterBox()
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                  padding: EdgeInsets.all(16),
+                  child: Column(children: [
+                    buildCustomAppBar(context),
+                    Row(children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 16, top: 16),
+                        padding: EdgeInsets.all(16),
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        width: MediaQuery.of(context).size.width * 0.42,
+                        decoration: BoxDecoration(
+                            color: Color(0xff6B5DD5),
+                            borderRadius: BorderRadius.circular(16)),
+                        child: buildBoxAfterAppBar(
+                            "images/addIcon.png",
+                            "Clinic Visit",
+                            "Make an appointment",
+                            Colors.white,
+                            Colors.white60),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 16),
+                        padding: EdgeInsets.all(16),
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        width: MediaQuery.of(context).size.width * 0.42,
+                        decoration: BoxDecoration(
+                            color: Color(0xffFEFEFE),
+                            borderRadius: BorderRadius.circular(16)),
+                        child: buildBoxAfterAppBar(
+                            "images/homeIcon.png",
+                            "Home Visit",
+                            "Call the doctor home",
+                            Colors.black,
+                            Colors.black38),
+                      ),
+                    ])
+                  ])),
+              ListViewOfAfterBox()
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavBar(),
       ),
