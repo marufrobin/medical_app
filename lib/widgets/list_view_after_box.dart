@@ -35,7 +35,7 @@ class ListViewOfAfterBox extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(left: 16),
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                       color: Colors.grey.shade300,
                       borderRadius: BorderRadius.circular(16)),
