@@ -17,14 +17,14 @@ class ModelData {
           "images/1.png",
           "12/11/2022",
           "10:30am",
-          "Dr.Chris Fizer is an experienced specialist who constantly working to improve his skill."),
+          "Dr.Chris Fizer is an experienced specialist who is constantly working to improve his skill."),
       ModelData(
           "Dr.Chris Fizer",
           "Prediatrician",
           "images/2.png",
           "12/11/2022",
           "10:30am",
-          "Dr.Chris Fizer is an experienced specialist who constantly working to improve his skill."),
+          "Dr.Chris Fizer is an experienced specialist who is constantly working to improve his skill."),
       ModelData(
           "Dr.Chris Fizer",
           "Prediatrician",
@@ -38,21 +38,21 @@ class ModelData {
           "images/4.png",
           "12/11/2022",
           "10:30am",
-          "Dr.Chris Fizer is an experienced specialist who constantly working to improve his skill."),
+          "Dr.Chris Fizer is an experienced specialist who is constantly working to improve his skill."),
       ModelData(
           "Dr.Chris Fizer",
           "Prediatrician",
           "images/5.png",
           "12/11/2022",
           "10:30am",
-          "Dr.Chris Fizer is an experienced specialist who constantly working to improve his skill."),
+          "Dr.Chris Fizer is an experienced specialist who is constantly working to improve his skill."),
       ModelData(
           "Dr.Chris Fizer",
           "Prediatrician",
           "images/6.png",
           "12/11/2022",
           "10:30am",
-          "Dr.Chris Fizer is an experienced specialist who constantly working to improve his skill.")
+          "Dr.Chris Fizer is an experienced specialist who is constantly working to improve his skill.")
     ];
   }
 }
