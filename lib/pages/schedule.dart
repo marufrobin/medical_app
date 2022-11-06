@@ -11,179 +11,178 @@ class SchedulePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(16.0),
-            // height: MediaQuery.of(context).size.height,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Image.asset("images/home"),
-                Text(
-                  "Schedule",
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                ),
-                tabView(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                ),
-                Text(
-                  "Nearest visit",
-                  style: TextStyle(
-                    fontSize: 20,
+    return (Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          margin:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
+          padding: const EdgeInsets.all(16.0),
+          // height: MediaQuery.of(context).size.height,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Image.asset("images/home"),
+              Text(
+                "Schedule",
+                style: TextStyle(
+                    fontSize: 30,
                     color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                  ),
+                    fontWeight: FontWeight.w400),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              tabView(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Text(
+                "Nearest visit",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
                 ),
-                Container(
-                  padding: EdgeInsets.all(16),
-                  margin: EdgeInsets.symmetric(vertical: 16),
-                  width: double.infinity,
-                  height: 190,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16)),
-                  child: Column(children: [
-                    Expanded(
-                        child: Row(
-                      children: [
-                        Expanded(
-                            flex: 2,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "${ListUserData[0].doctorName}",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    // fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  "${ListUserData[0].doctorType}",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      // fontWeight: FontWeight.w500,
-                                      color: Colors.black45),
-                                )
-                              ],
-                            )),
-                        CircleAvatar(
-                          backgroundColor: Color(0xffFFCCCD),
-                          child: Image.asset("${ListUserData[0].doctorImage}",
-                              scale: 12),
-                          radius: 30,
-                        )
-                      ],
-                    )),
-                    Divider(
-                      thickness: 1,
-                      // endIndent: 4,
-                      color: Colors.grey,
-                    ),
-                    Expanded(
-                      // flex: 2,
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                margin: EdgeInsets.symmetric(vertical: 16),
+                width: double.infinity,
+                height: 190,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16)),
+                child: Column(children: [
+                  Expanded(
+                      child: Row(
+                    children: [
+                      Expanded(
+                          flex: 2,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              buildCalenderTime(Icons.calendar_month_rounded,
-                                  ListUserData[0].appointDate),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.02,
-                              ),
-                              buildCalenderTime(
-                                  Icons.access_time_filled_outlined,
-                                  ListUserData[0].appointTime),
-                              // Spacer(),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.02,
-                              ),
-                              CircleAvatar(
-                                radius: 6,
-                                backgroundColor: Colors.green,
-                              ),
-
                               Text(
-                                "Confirmed",
-                                style: TextStyle(fontSize: 14),
+                                "${ListUserData[0].doctorName}",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  // fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                "${ListUserData[0].doctorType}",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    // fontWeight: FontWeight.w500,
+                                    color: Colors.black45),
                               )
                             ],
-                          ),
-                          // Spacer(),
-                          Row(
-                            children: [
-                              GestureDetector(
-                                onTap: () {},
-                                child: Container(
-                                  margin: EdgeInsets.only(top: 4),
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 14, horizontal: 50),
-                                  decoration: BoxDecoration(
-                                      color: Colors.grey.shade200,
-                                      borderRadius: BorderRadius.circular(8)),
-                                  child: Center(
-                                    child: Text(
-                                      "Cancel",
-                                      style: TextStyle(
-                                          fontSize: 16, color: Colors.black),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Spacer(),
-                              GestureDetector(
-                                onTap: () {},
-                                child: Container(
-                                  margin: EdgeInsets.only(top: 4),
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 14, horizontal: 40),
-                                  decoration: BoxDecoration(
-                                      color: Color(0xff6B5DD5),
-                                      borderRadius: BorderRadius.circular(8)),
-                                  child: Center(
-                                    child: Text(
-                                      "Reschdule",
-                                      style: TextStyle(
-                                          fontSize: 16, color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-                  ]),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.03,
-                ),
-                Text(
-                  "Future visit",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
+                          )),
+                      CircleAvatar(
+                        backgroundColor: Color(0xffFFCCCD),
+                        child: Image.asset("${ListUserData[0].doctorImage}",
+                            scale: 12),
+                        radius: 30,
+                      )
+                    ],
+                  )),
+                  Divider(
+                    thickness: 1,
+                    // endIndent: 4,
+                    color: Colors.grey,
                   ),
+                  Expanded(
+                    // flex: 2,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            buildCalenderTime(Icons.calendar_month_rounded,
+                                ListUserData[0].appointDate),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.02,
+                            ),
+                            buildCalenderTime(Icons.access_time_filled_outlined,
+                                ListUserData[0].appointTime),
+                            // Spacer(),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.02,
+                            ),
+                            CircleAvatar(
+                              radius: 6,
+                              backgroundColor: Colors.green,
+                            ),
+
+                            Text(
+                              "Confirmed",
+                              style: TextStyle(fontSize: 14),
+                            )
+                          ],
+                        ),
+                        // Spacer(),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(top: 4),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 14, horizontal: 50),
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.shade200,
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Center(
+                                  child: Text(
+                                    "Cancel",
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Spacer(),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                margin: EdgeInsets.only(top: 4),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 14, horizontal: 40),
+                                decoration: BoxDecoration(
+                                    color: Color(0xff6B5DD5),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Center(
+                                  child: Text(
+                                    "Reschdule",
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ]),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Text(
+                "Future visit",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
                 ),
-                ListBuilder()
-              ],
-            ),
+              ),
+              ListBuilder()
+            ],
           ),
         ),
-        bottomNavigationBar: BottomNavBar(),
       ),
+      bottomNavigationBar: BottomNavBar(),
     ));
   }
 

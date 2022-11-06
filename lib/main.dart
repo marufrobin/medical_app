@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:medical_app/home_page.dart';
 import 'package:medical_app/pages/massages.dart';
 import 'package:medical_app/pages/schedule.dart';
@@ -18,12 +19,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
-        home: SafeArea(
-      child: Scaffold(
-        body: HomePage(),
-        // bottomNavigationBar: BottomNavBar(),
-      ),
+        home: Scaffold(
+      body: HomePage(),
+      // bottomNavigationBar: BottomNavBar(),
     ));
   }
 }

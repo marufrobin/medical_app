@@ -8,8 +8,7 @@ class DoctorInfoPage extends StatelessWidget {
   var listDoctorInfo = ModelData.doctorData();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       bottomSheet: Container(
         padding: EdgeInsets.all(8),
         height: 100,
@@ -52,6 +51,9 @@ class DoctorInfoPage extends StatelessWidget {
       backgroundColor: Color(0xff6B5DD5),
       body: Column(
         children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.04,
+          ),
           Expanded(
               flex: 2,
               child: Container(
@@ -152,7 +154,7 @@ class DoctorInfoPage extends StatelessWidget {
           )
         ],
       ),
-    ));
+    );
   }
 
   Container buildAboutDoctor(BuildContext context) {
