@@ -6,7 +6,7 @@ import 'model/model_data.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  var ListUserData = ModelData.doctorData();
+  var listUserData = ModelData.doctorData();
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +21,34 @@ class HomePage extends StatelessWidget {
                   buildCustomAppBar(context),
                   Row(children: [
                     Container(
-                      margin: EdgeInsets.only(right: 16),
+                      margin: EdgeInsets.only(right: 16, top: 16),
                       height: MediaQuery.of(context).size.height * 0.2,
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      color: Color(0xff6B5DD5),
+                      width: MediaQuery.of(context).size.width * 0.42,
+                      decoration: BoxDecoration(
+                          color: Color(0xff6B5DD5),
+                          borderRadius: BorderRadius.circular(16)),
                     ),
                     Container(
+                      margin: EdgeInsets.only(top: 16),
+                      padding: EdgeInsets.all(16),
                       height: MediaQuery.of(context).size.height * 0.2,
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      color: Color(0xffFEFEFE),
+                      width: MediaQuery.of(context).size.width * 0.42,
+                      decoration: BoxDecoration(
+                          color: Color(0xffFEFEFE),
+                          borderRadius: BorderRadius.circular(16)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.,
+                        children: [
+                          CircleAvatar(
+                            child: Image.asset(
+                              'images/homeIcon.png',
+                              scale: 3,
+                            ),
+                            backgroundColor: Colors.grey.shade200,
+                          ),
+                        ],
+                      ),
                     ),
                   ])
                 ]))
@@ -57,7 +76,7 @@ class HomePage extends StatelessWidget {
           Spacer(),
           CircleAvatar(
             backgroundColor: Color(0xffFFCCCD),
-            child: Image.asset("${ListUserData[0].doctorImage}", scale: 14),
+            child: Image.asset("${listUserData[0].doctorImage}", scale: 14),
             radius: 28,
           )
         ],
