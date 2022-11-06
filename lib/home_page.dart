@@ -30,10 +30,10 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16)),
                       child: buildBoxAfterAppBar(
                           "images/addIcon.png",
-                          "Home Visit",
-                          "Call the doctor home",
+                          "Clinic Visit",
+                          "Make an appointment",
                           Colors.white,
-                          Colors.white38),
+                          Colors.white60),
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 16),
@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
         ),
         Text(
           info,
-          style: TextStyle(fontSize: 14, color: infoClr),
+          style: TextStyle(fontSize: 13, color: infoClr),
         )
       ],
     );
