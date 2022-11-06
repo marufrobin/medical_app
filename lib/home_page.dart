@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/bottom_nav_bar.dart';
 
+import 'model/list_view_after_box.dart';
 import 'model/model_data.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,6 +15,8 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0xffF5F5F5),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
                 padding: EdgeInsets.all(16),
@@ -51,7 +54,8 @@ class HomePage extends StatelessWidget {
                           Colors.black38),
                     ),
                   ])
-                ]))
+                ])),
+            ListViewOfAfterBox()
           ],
         ),
         bottomNavigationBar: BottomNavBar(),
