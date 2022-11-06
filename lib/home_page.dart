@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_app/bottom_nav_bar.dart';
+import 'package:medical_app/widgets/list_view_after_box.dart';
 
-import 'model/list_view_after_box.dart';
 import 'model/model_data.dart';
 
 class HomePage extends StatelessWidget {
