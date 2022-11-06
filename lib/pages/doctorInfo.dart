@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medical_app/model/model_data.dart';
 
 class DoctorInfoPage extends StatelessWidget {
-  DoctorInfoPage({Key? key}) : super(key: key);
+  int index;
+  DoctorInfoPage(this.index);
+
   var listDoctorInfo = ModelData.doctorData();
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class DoctorInfoPage extends StatelessWidget {
                             CircleAvatar(
                               backgroundColor: Color(0xffFFCCCD),
                               child: Image.asset(
-                                  "${listDoctorInfo[0].doctorImage}",
+                                  "${listDoctorInfo[index].doctorImage}",
                                   scale: 10),
                               radius: 40,
                             ),
@@ -87,7 +89,7 @@ class DoctorInfoPage extends StatelessWidget {
                               height: MediaQuery.of(context).size.height * 0.02,
                             ),
                             Text(
-                              "${listDoctorInfo[0].doctorName}",
+                              "${listDoctorInfo[index].doctorName}",
                               style:
                                   TextStyle(fontSize: 26, color: Colors.white),
                             ),
@@ -96,7 +98,7 @@ class DoctorInfoPage extends StatelessWidget {
                                   MediaQuery.of(context).size.height * 0.005,
                             ),
                             Text(
-                              "${listDoctorInfo[0].doctorType}",
+                              "${listDoctorInfo[index].doctorType}",
                               style:
                                   TextStyle(fontSize: 16, color: Colors.white),
                             ),
@@ -169,7 +171,7 @@ class DoctorInfoPage extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.016,
           ),
-          Text("${listDoctorInfo[0].doctorInfo}",
+          Text("${listDoctorInfo[index].doctorInfo}",
               style: TextStyle(fontSize: 16)),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.016,

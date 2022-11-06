@@ -71,7 +71,7 @@ class ListViewOfAfterBox extends StatelessWidget {
                     (index) => GestureDetector(
                           onTap: (() {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => DoctorInfoPage(),
+                              builder: (context) => DoctorInfoPage(index),
                             ));
                           }),
                           child: Container(
