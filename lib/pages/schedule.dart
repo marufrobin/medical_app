@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/bottom_nav_bar.dart';
 import 'package:medical_app/model/model_data.dart';
 import 'package:medical_app/pages/list_buider.dart';
+
+import '../bottom_nav_bar.dart';
 // import 'bottom_nav_bar.dart';
 
 class SchedulePage extends StatelessWidget {

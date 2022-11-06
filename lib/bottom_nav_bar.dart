@@ -13,6 +13,8 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  // int _selectIndex = 0;
+  List<Widget> listPages = [HomePage(), Massage(), SchedulePage(), Setting()];
   bool isSchdule = false;
   @override
   Widget build(BuildContext context) {
@@ -25,8 +27,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => HomePage(),
+                  builder: (context) => listPages[0],
                 ));
+                // MyApp(selectIndex: 0);
               },
               child: buildNavButton(
                   imageLocation: "images/homeIcon.png",
@@ -35,8 +38,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Massage(),
+                  builder: (context) => listPages[1],
                 ));
+                // MyApp(selectIndex: 1);
               },
               child: buildNavButton(
                   imageLocation: "images/massageIcon.png",
@@ -47,8 +51,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               setState(() {
                 isSchdule = true;
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SchedulePage(),
+                  builder: (context) => listPages[2],
                 ));
+                // MyApp(selectIndex: 2);
               });
             },
             child: buildNavButton(
@@ -62,8 +67,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           TextButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Setting(),
+                  builder: (context) => listPages[3],
                 ));
+                // MyApp(selectIndex: 3);
               },
               child: buildNavButton(
                   imageLocation: "images/settingIcon.png",

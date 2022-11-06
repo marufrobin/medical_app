@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/bottom_nav_bar.dart';
 import 'package:medical_app/home_page.dart';
+import 'package:medical_app/pages/massages.dart';
+import 'package:medical_app/pages/schedule.dart';
+import 'package:medical_app/pages/setting.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(
+    selectIndex: 0,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  int selectIndex;
+  MyApp({required this.selectIndex});
+
+  List<Widget> pageName = [HomePage(), Massage(), SchedulePage(), Setting()];
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,7 @@ class MyApp extends StatelessWidget {
         home: SafeArea(
       child: Scaffold(
         body: HomePage(),
-        bottomNavigationBar: BottomNavBar(),
+        // bottomNavigationBar: BottomNavBar(),
       ),
     ));
   }
